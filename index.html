@@ -6,8 +6,8 @@ import {getAuth,signInWithEmailAndPassword,onAuthStateChanged,signOut} from 'htt
 import {getFirestore,collection,addDoc,deleteDoc,doc,onSnapshot,serverTimestamp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
 const firebaseConfig={apiKey:'AIzaSyD9wbwkzg-8oqDVq0RbRNYcri9q_2wtL5g',authDomain:'otetsudai-board-169a4.firebaseapp.com',projectId:'otetsudai-board-169a4',storageBucket:'otetsudai-board-169a4.firebasestorage.app',messagingSenderId:'290709377101',appId:'1:290709377101:web:6a2f443add6ebdf16e4c04',measurementId:'G-XV11NLLPW5'};
 // Replace these two placeholders with the UID values from Firebase Authentication.
-const PARENT_UID='REPLACE_WITH_PARENT_UID';
-const CHILD_UID='REPLACE_WITH_CHILD_UID';
+const PARENT_UID='jOzCdjtrSRRkABm5OGlKN22IV3W2';
+const CHILD_UID='zj63XZGotGXNNFypH84Oi3xXprw2';
 const fb=initializeApp(firebaseConfig),auth=getAuth(fb),db=getFirestore(fb),items=[['bath','🛁','お風呂洗い',50],['laundry','👕','洗濯物たたみ',50],['rice','🍚','お米炊き',50],['cook','🍳','料理',100]];
 const $=id=>document.getElementById(id),fmt=n=>n.toLocaleString('ja-JP')+'円';let user=null,records=[],unsub=null,undoId=null,view=new Date();
 const jpDate=(date=new Date())=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(date);const thisMonth=()=>jpDate().slice(0,7);const pad=n=>String(n).padStart(2,'0');const viewMonth=()=>`${view.getFullYear()}-${pad(view.getMonth()+1)}`;
